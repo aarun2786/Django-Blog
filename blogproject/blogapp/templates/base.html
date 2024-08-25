@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/css.css'%}">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+    
+    <div class="main-grid" >
+            {% block navbar%}
+                <div class="navbar">
+                    <ul>
+                        <li class="brand" >Home</li>
+                        <li class="nav-search">
+                            <input type="text">
+                            <input type="submit" value="search">
+                        </li>
+                        <li class="nav-search">
+                            {% block navbtn %}       
+                            <button class="btn" >Login</button>
+                            <button class="btn">Sign Up</button>
+                            {% endblock %}   
+                        </li>
+                    </ul>
+                </div>
+            {% endblock%}
+
+
+            {% block leftbar%}
+                <div id="leftbar" class="leftbar" >
+                    <ul class="lefbar-one" >
+                        <li>
+                            <button class="dropdw">Home</button>
+                            <div class="dropmenu">
+                            </div>
+                        </li>
+                        <li>
+                            <button class="dropdw">Recent Post</button>
+                            <div class="dropmenu"></div>
+                        </li>
+                        <li>
+                            <button class="dropdw">Trending</button>
+                            <div class="dropmenu"></div>
+                        </li>
+                        <li>
+                            <button class="dropdw">Most Liked</button>
+                            <div class="dropmenu"></div>
+                        </li>
+                    </ul>
+                </div>
+            {% endblock %}
+            
+            
+            {% block main %}
+            
+            {% endblock %}
+        
+    </div>
+    <div class="container">
+        {% block container %}
+        
+        {% endblock %}
+    </div>
+</body>
+</html>

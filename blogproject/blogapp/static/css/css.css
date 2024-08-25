@@ -1,0 +1,399 @@
+:root{
+    --10:#6528F7;
+    --30:#d8d4ed;
+    --60:#ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing:content-box;
+}
+
+.main-grid{
+
+    display: grid;
+    grid-template-areas: 
+    "navbar navbar"
+    "leftbar menu";
+    grid-template-columns:0.3fr 2fr;
+    grid-template-rows: 75px 100vh;
+    position: fixed;
+    width: 100vw;
+}
+
+/* NavBar-------------------------------------------------------------------------------------------------------------------------*/
+.navbar{
+    grid-area: navbar;
+    background-color: var(--10);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+.navbar ul{ 
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.navbar li{
+    list-style-type: none;
+    margin: auto;
+    overflow: hidden;
+}
+.nav-search input[type=text]{
+
+    width:700px;
+    height: 40px;
+    border-radius: 50px 0px 0px 50px;
+    border: none;
+    padding: 0 0 0 15px;
+    outline: none;
+}
+.nav-search input[type=submit]{
+    position: relative;
+    width: 4em;
+    height: 40px;
+    right: 5px ;
+    border-radius: 0 50px 50px 0;
+    border: none;
+}
+
+.nav-links{
+    text-decoration: none;
+    color: black;
+}
+/* SideBar-------------------------------------------------------------------------------------------------------------------- */
+.leftbar{
+    grid-area: leftbar;
+    background-color: var(--60);
+    display: flex;
+    padding: 10px 5px 0 5px;
+    border-right: var(--10) solid 2px;
+    }
+.lefbar-one{
+    list-style-type: none;
+    width: 100%;
+}
+.lefbar-one li{
+    display: flex;
+    flex-direction: column;
+    margin: 1px 0 0 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    background-color: var(--60);
+   
+}
+
+.dropdw {
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: transparent;
+    border: none;
+    background-color: beige;
+    font-size:0.9em;
+}
+
+
+
+.main{
+    grid-area: menu;
+    background-color: var(--60);
+    overflow: scroll;
+    text-align: center;
+    
+}
+ 
+/*Post------------------------------------------------------------------------------------------*/
+.posts {
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.posts .post{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 650px;
+    border-radius: 15px;
+    scroll-snap-type: y proximity;
+    background-color: #ffffff;
+    border: solid 1px;
+}
+.post > div{
+    text-align: center;
+    scroll-snap-align: center;
+    flex: none;
+}
+.post .top{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px 0px 10px;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.top div{
+    align-self: center;
+}
+.user-imge img{
+    width: 50px;
+    border-radius: 50%;
+}
+.post .body{
+    max-height: 298px;
+
+    overflow: hidden;
+    padding: 0px 10px 0px 10px;
+    text-overflow: ellipsis;
+}
+.post .bottom{
+
+    padding: 0px 35px 10px 35px;
+    display: flex;
+    border: none;
+    justify-content: space-between;
+}
+.bottom div{
+    padding: 15px;
+}
+.bottom a{
+    text-decoration: none;
+    color: black;
+}
+.btn {
+
+    width: auto;
+    padding: 0.9em;
+    border-radius: 9px;
+}
+
+
+/*Login and Signup---------------------------------------------------------------------------------*/
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+
+.container .box{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(225, 225, 225);
+    gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.box .form{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    width: 90%;
+    padding: 10px;
+}
+
+.form input[type=text] ,input[type=password]{
+    line-height: 3em;
+    border-radius: 5px;
+    padding:  0px 0px 0px 10px;
+    border: none;
+
+
+}
+
+
+/* Create Post ---------------------------------------------------------------------------------*/
+.post-box{
+    background-color:var(--60);
+    height: 100%;
+    padding: 20px;
+}
+
+.textarea {
+
+    padding: 20px;
+    height: 400px;
+    border: solid black 1px;
+    text-align: start;
+    margin-bottom: 15px;
+    
+}
+.textarea:focus ,.post-title:focus{
+    outline: none
+}
+.toolbox{
+    padding: 20px;
+    border: solid black 1px;
+    border-bottom: none;
+}
+#editor{
+    min-height: 400px;
+    height: 450px;
+    overflow: auto;
+    
+}
+.post-btn{
+   display: flex;
+   gap: 30px;
+    margin: 30px;
+    justify-content: right;
+}
+.post-btn > .btn {
+    font-size: medium;
+    width:3em;
+    height: 1em;
+    border-radius: 20px;
+
+}
+
+.profile-box, .user-activity{
+    background-color: white;
+    margin: 10px;
+    height: 600px;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.profile-box{
+
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+}
+.profile-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.cover-box, .bio-box{
+    position: relative;
+}
+.profile-card .cover-pic{
+    width: 100%;
+    height: 250px;
+}
+.profile-card .bio-pic{
+    display: block;
+    width: 200px;
+    border-radius: 50%;
+    margin-top: -90px;
+}
+
+.cover-box .cover-label{
+    
+    position: absolute;
+    background-color: #15F5BA;
+    width: fit-content;
+    right: 50px;
+}
+.bio-box .bio-label{
+    display: block;
+    position: absolute;
+    background-color: rgba(21, 245, 186,.5);
+    left: 170px;
+    margin-top: -90px;
+    cursor: pointer;
+}
+.bio-data{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.bio-data input[type=text]{
+    width: 50%;
+
+    outline: none;
+    border: none;
+    border-bottom: #6528F7 solid 1px;
+    margin-top: 20px;
+    height: 25px;
+    padding-left: 5px;
+}
+.bio-data  label {
+    left: 0px;
+    padding: 0px;
+    z-index: 1;
+    background-color: white;
+}
+
+
+.submit-btn{
+    position: relative;
+    bottom:60px;
+}
+.edit {
+    background-color: #6528F7;
+    position: static;
+    left:95%;
+    margin-top: 10px;
+    
+}
+.edit button{
+    cursor: pointer;
+    padding: 5px;
+}
+
+.backgroundimg label{
+    position: absolute;
+    right: 40px;
+    background-color: #15F5BA;
+}
+label {
+    padding: 10px;
+}
+input[type=file]{
+    display: none;
+}
+.user-activity{
+
+height: auto;
+
+}
+.activity-box{
+    display: flex;
+    justify-content: center;
+}
+
+.user-activity .activity-label{
+    display: flex;
+    width: auto;
+    background-color: var(--30);
+    gap: 40px;
+    padding: 10px;
+}
+.activity-label button{
+    padding: 10px;
+    border-radius: 20px;
+    background-color:var(--10);
+    color: white;
+}
+
+
+.tool-box{
+    display: flex;
+    
+}
+
+.tool-box .toolbar{
+    display: flex;
+    align-items: center
+}
