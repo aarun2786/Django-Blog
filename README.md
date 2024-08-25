@@ -1,1 +1,1 @@
-# djnagoBlog
+# Django Blog Web App
